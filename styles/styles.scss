@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+.flex-col{
+    display: flex;
+    flex-direction: column;
+}
+.gap-10{
+    gap: 10px;
+}
+.gap-20{
+    gap: 20px;
+}
+
+@import 'typography';
+@import 'grid';
+
+.main-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    &-header{
+        width: 100%;
+        padding: 15px;
+        border-bottom: 1px solid #e5e5e5;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        position: relative;
+        flex-shrink: 0;
+        .hero-logo{
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            transform: translateY(-50%) translateX(50%);
+        }
+        button{
+            border: none;
+            background: none;
+            padding: 5px;
+            cursor: pointer;
+            svg{
+                width: 30px;
+                stroke-width: 1;
+            }
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+
+    &-content{
+        position: relative;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        &-scroll{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            inset: 0;
+            height: 100%;
+            max-height: 100%;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: auto;
+        }
+    }
+    &-sidebar{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+
+        z-index: 10;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        max-width: 400px;
+        background: white;
+        padding: 20px;
+        overflow: auto;
+        border-left: 1px solid #e5e5e5;
+        transform: translateX(100%);
+        transition: 0.2s ease-in-out;
+        visibility: hidden;
+        &.active, &:focus-within{
+            visibility: visible;
+            transform: translateX(0);
+        }
+    }
+}
+
+.no-scroll{
+    overflow: hidden;
+}
+.op-7{
+    opacity: .7;
+}
+
+.articles-grid-container{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.article-card{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    cursor: pointer;
+    img{
+        aspect-ratio: 1 / 1;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+.filter-container{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e5e5e5;
+    .filter-header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        &-title{
+            padding: 10px;
+        }
+        button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            aspect-ratio: 1 / 1;
+            min-width: 42px;
+            background: transparent;
+            border: none;
+            border-left: 1px solid #e5e5e5;
+            svg{
+                width: 20px;
+            }
+        }
+        &.open{
+            border-bottom: 1px solid #e5e5e5;
+        }
+    }
+    .filter-body{
+        max-height: 0;
+        overflow: hidden;
+        background: #f7f7f7;
+        transition: 0.5s linear;
+        visibility: hidden;
+        &.open{
+            visibility: visible;
+            overflow: auto;
+            max-height: 70vh;
+        }
+        .filter-container{
+            border: none;
+            &:not(:last-child){
+                border-bottom: 1px solid #e5e5e5;
+            }
+        }
+    }
+}
+
+.main-sidenav{
+    background: rgba(0, 0, 0, 0.685);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    max-width: 400px;
+    z-index: 100;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    transition: 0.2s ease-in-out;
+    transform: translateX(-100%);
+    color: white;
+    gap: 20px;
+    &.open{
+        transform: translateX(0);
+    }
+}

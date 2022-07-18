@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AimeLeonDore</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="//unpkg.com/alpinejs" defer></script>
+</head>
+<body>
+    <div class="main-container" x-data="{sidebar : false, navbar: false}" x-bind:class="navbar? 'no-scroll': ''">
+        <nav class="main-sidenav" x-bind:class="navbar ? 'open' : ''" @click.away="navbar= false">
+            <button @click="navbar = false">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+            </button>
+            <ul class="flex-col gap-20">
+                <li>Shop</li>
+                <li>SS22</li>
+                <li>News</li>
+                <li>About</li>
+                <li>Store</li>
+            </ul>
+            <ul class="flex-col gap-10">
+                <li class="text-xs">Support</li>
+                <li class="text-xs">Terms</li>
+                <li class="text-xs">Privacy</li>
+                <li class="text-xs">Careers</li>
+            </ul>
+
+            <div class="flex-row">
+                <input type="text" placeholder="Enter your email">
+                <button>Subscribe</button>
+            </div>
+
+            <span class="text-xs op-7">© 2022 Aimé 3jaja Dore</span>
+        </nav>
+        <div class="main-container-header">
+            <button @click.stop="navbar = !navbar"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg></button>
+            <div class="hero-logo">
+                <svg width="130" height="21" viewBox="0 0 130 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.5665 5.12012H19.8198L22.8395 13.3822L25.8746 5.12012H28.1125V20.8318H25.6446V11.6347L23.4987 17.4749H22.1804L20.0344 11.6347V20.8318H17.5665V5.12012Z" fill="#181818"></path>
+                    <path d="M12.1095 20.8318V5.12012H14.5774V20.8318H12.1095Z" fill="#181818"></path>
+                    <path d="M31.1014 20.8318V5.12012H37.708V7.34275H33.5693V11.8033H37.1255V14.026H33.5693V18.5938H37.6927V20.8165H31.1014V20.8318Z" fill="#181818"></path>
+                    <path d="M45.5563 20.8318V5.12012H48.0242V18.6092H52.1475V20.8318H45.5563Z" fill="#181818"></path>
+                    <path d="M54.6766 20.8318V5.12012H61.2832V7.34275H57.1598V11.8033H60.7007V14.026H57.1445V18.5938H61.2679V20.8165H54.6766V20.8318Z" fill="#181818"></path>
+                    <path d="M70.557 19.6815C69.8979 20.4326 69.0088 20.9998 67.5067 20.9998C66.0045 20.9998 65.1154 20.4326 64.4563 19.6815C63.2913 18.3633 63.3067 16.064 63.3067 12.9677C63.3067 9.87132 63.2913 7.58737 64.4563 6.2538C65.1154 5.5027 66.0045 4.93555 67.5067 4.93555C69.0088 4.93555 69.8979 5.5027 70.557 6.2538C71.722 7.57204 71.7067 9.87132 71.7067 12.9677C71.7067 16.064 71.7373 18.3633 70.557 19.6815ZM68.7023 7.77131C68.4877 7.41876 68.1045 7.1735 67.5067 7.1735C66.9088 7.1735 66.5563 7.41876 66.3417 7.77131C65.8818 8.52241 65.7899 10.1166 65.7899 12.983C65.7899 15.8494 65.8818 17.4436 66.3417 18.1947C66.5563 18.5472 66.9088 18.7925 67.5067 18.7925C68.1045 18.7925 68.4723 18.5472 68.7023 18.1947C69.1621 17.4436 69.2388 15.8494 69.2388 12.983C69.2388 10.1012 69.1775 8.52241 68.7023 7.77131Z" fill="#181818"></path>
+                    <path d="M80.4135 20.8318L76.704 11.4354V20.8318H74.2361V5.12012H76.4434L80.1222 14.4552V5.12012H82.5901V20.8318H80.4135Z" fill="#181818"></path>
+                    <path d="M97.4892 19.5289C96.8454 20.2647 95.941 20.8318 94.4388 20.8318H90.4381V5.12012H94.4388C95.941 5.12012 96.8454 5.68727 97.4892 6.42304C98.6542 7.72596 98.6388 9.94859 98.6388 12.9836C98.6388 16.0033 98.6542 18.226 97.4892 19.5289ZM95.6345 7.98654C95.3892 7.61866 94.9753 7.34275 94.3775 7.34275H92.9213V18.5938H94.3775C94.9753 18.5938 95.3892 18.3333 95.6345 17.9501C96.0943 17.2143 96.171 15.6814 96.171 12.9376C96.171 10.2245 96.0943 8.72231 95.6345 7.98654Z" fill="#181818"></path>
+                    <path d="M108.188 19.6815C107.529 20.4326 106.64 20.9998 105.138 20.9998C103.636 20.9998 102.747 20.4326 102.088 19.6815C100.923 18.3633 100.938 16.064 100.938 12.9677C100.938 9.87132 100.923 7.58737 102.088 6.2538C102.747 5.5027 103.636 4.93555 105.138 4.93555C106.64 4.93555 107.529 5.5027 108.188 6.2538C109.353 7.57204 109.338 9.87132 109.338 12.9677C109.338 16.064 109.369 18.3633 108.188 19.6815ZM106.334 7.77131C106.119 7.41876 105.736 7.1735 105.138 7.1735C104.54 7.1735 104.188 7.41876 103.973 7.77131C103.513 8.52241 103.421 10.1166 103.421 12.983C103.421 15.8494 103.513 17.4436 103.973 18.1947C104.188 18.5472 104.54 18.7925 105.138 18.7925C105.736 18.7925 106.104 18.5472 106.334 18.1947C106.793 17.4436 106.87 15.8494 106.87 12.983C106.87 10.1012 106.809 8.52241 106.334 7.77131Z" fill="#181818"></path>
+                    <path d="M117.769 20.8318L115.607 14.3938H114.32V20.8318H111.852V5.12012H115.822C118.688 5.12012 119.838 6.51501 119.838 9.74932C119.838 11.696 119.439 13.0756 117.999 13.8573L120.344 20.8318H117.769ZM115.853 7.34275H114.335V12.1559H115.853C117.171 12.1559 117.37 11.0522 117.37 9.74932C117.37 8.4464 117.171 7.34275 115.853 7.34275Z" fill="#181818"></path>
+                    <path d="M122.674 20.8318V5.12012H129.28V7.34275H125.157V11.8033H128.713V14.026H125.157V18.5938H129.28V20.8165H122.674V20.8318Z" fill="#181818"></path>
+                    <path d="M35.087 3.0657H33.4622L35.0563 0H37.0184L35.087 3.0657Z" fill="#181818"></path>
+                    <path d="M6.25402 5.12012L10.0708 20.8318H7.67957L6.98979 17.9807H3.08102L2.39124 20.8318H0L3.81679 5.12012H6.25402ZM6.43796 15.7581L5.02774 9.96392L3.61752 15.7581H6.43796Z" fill="#181818"></path>
+                </svg>
+            </div>
+            <div class="flex-row gap-20">
+                <a href="" class="text-sm">SEARCH</a>
+                <a href="" class="text-sm">ACCOUNT</a>
+            </div>
+        </div>
+        <div class="main-container-header">
+            <span class="text-xl">Shop All</span>
+            <button @click.stop="sidebar = !sidebar">Filters</button>
+        </div>
+        <div class="main-container-content" x-bind:class="navbar? 'no-scroll': ''">
+            <div class="main-container-sidebar" x-bind:class="sidebar ? 'active' : ''" @click.away="sidebar = false">
+                <div class="flex-col gap-10">
+                    <template x-for="item in [...Array(3).keys()]">
+                        
+                        <div class="filter-container" x-data="{open: false}" >
+                            <div class="filter-header" x-bind:class="open ? 'open' : ''">
+                                <div class="filter-header-title">
+                                    Category
+                                </div>
+                                <button @click="open = !open">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" x-show="!open">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" x-show="open">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="filter-body" x-bind:class="open ? 'open' : ''">
+                                <template x-for="item in [...Array(3).keys()]">
+                        
+                                    <div class="filter-container" x-data="{open: false}" >
+                                        <div class="filter-header" x-bind:class="open ? 'open' : ''">
+                                            <div class="filter-header-title">
+                                                Category
+                                            </div>
+                                            <button @click="open = !open">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" x-show="!open">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                                </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" x-show="open">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <div class="filter-body" x-bind:class="open ? 'open' : ''">
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis veniam quod laborum tenetur ex deserunt? Voluptatibus odit sed totam porro nihil, dolor, dolorum saepe explicabo eius necessitatibus, similique labore unde.</p>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+                
+            </div>
+            <div class="main-container-content-scroll" x-bind:class="navbar? 'no-scroll': ''">
+                <div class="articles-grid-container">
+                    <div class="grid">
+                        <template x-for="item in [...Array(10).keys()]">
+                            <div class="col-xs-6 col-sm-4 col-md-3">
+                                <article class="article-card">
+                                    <img src="https://cdn.shopify.com/s/files/1/0302/7829/products/AimeLeonDore6299607d4e8d966299607d4eabf.519219396299607d4eabf_800x.jpg?v=1655827416" alt="">
+                                    <div class="flex-col">
+                                        <span class="text-sm">Cafe Leon Dore Tote Bag</span>
+                                        <span class="text-sm">752 MAD</span>
+                                        <span class="text-sm op-7">2 Colors Available</span>
+                                    </div>
+                                </article>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
